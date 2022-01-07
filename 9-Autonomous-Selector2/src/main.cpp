@@ -2,8 +2,8 @@
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
 /*    Author:       Jess Zarchi                                               */
-/*    Created:      Fri Jan 6  2022                                           */
-/*    Description:  Autonomous Selector 2                                     */
+/*    Created:      Fri Jan 7  2022                                           */
+/*    Description:  Color Changing Autonomous Selector                        */
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
 

@@ -1,9 +1,9 @@
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
-/*    Author:       VEX                                                       */
-/*    Created:      Thu Sep 26 2019                                           */
-/*    Description:  Competition Template                                      */
+/*    Author:       Jess Zarchi                                               */
+/*    Created:      Fri Jan 7  2022                                           */
+/*    Description:  Joystick Control                                          */
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
 
