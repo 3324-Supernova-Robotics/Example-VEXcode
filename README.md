@@ -19,4 +19,4 @@ In VEXcode, go to `File` -> `Open` and navigate to your `Downloads` to find the 
 ### 5 - [Feedback Controller (PID)](5-Feedback-Controller)
 ### 6 - [IMU](6-IMU)
 ### 7 - [Pneumatics](7-Pneumatics)
-### 8 - [Screen Autonomous Selector]8-Autonomous-Selector
+### 8 - [Screen Autonomous Selector](8-Autonomous-Selector)
