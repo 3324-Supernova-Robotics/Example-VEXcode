@@ -14,6 +14,9 @@ The `drawRectangle()` command prints a rectangle at x1, y1, x2, y2.  This functi
 
 ```cpp
 void pre_auton() {
+  // Initializing Robot Configuration. DO NOT REMOVE!
+  vexcodeInit();
+
   Brain.Screen.setPenColor(blue);
   Brain.Screen.drawRectangle(5, 50, 50, 175, blue);
 }
@@ -22,6 +25,9 @@ void pre_auton() {
 To print multiple rectangles, we can copy/paste this, but increase `x1` by 60 every time.
 ```cpp
 void pre_auton() {
+  // Initializing Robot Configuration. DO NOT REMOVE!
+  vexcodeInit();
+
   Brain.Screen.setPenColor(blue);
   Brain.Screen.drawRectangle(5, 50, 50, 175, blue);
   Brain.Screen.drawRectangle(5+60, 50, 50, 175, blue);
@@ -41,6 +47,9 @@ We can use a `for` loop and simplify this code.  I would try to explain for loop
 In the code above, each time we print a new rectangle, we are adding `60*x` to 5.  So in the for loop, we can add `60*i`.  The first time it runs, `60*0` is `0` so it will just print at `5`.  The second time it runs, `60*1` is `60` so it will print at `65`.  This is the same as the code above. 
 ```cpp
 void pre_auton() {
+  // Initializing Robot Configuration. DO NOT REMOVE!
+  vexcodeInit();
+
   for (int i = 0; i < 8; i++) {
     Brain.Screen.setPenColor(blue);
     Brain.Screen.drawRectangle(5+(60*i), 50, 50, 175, blue);
@@ -58,6 +67,9 @@ We need to check which box the selection was within.  All of the selections have
 int AutonNumber = 1;
 
 void pre_auton() {
+  // Initializing Robot Configuration. DO NOT REMOVE!
+  vexcodeInit();
+
   for (int i = 0; i < 8; i++) {
     Brain.Screen.setPenColor(blue);
     Brain.Screen.drawRectangle(5+(60*i), 50, 50, 175, blue);
@@ -116,6 +128,9 @@ The `x` is checking `5+(60*i)` for the first one, and `(60*(i+1))-5`.
 int AutonNumber = 1;
 
 void pre_auton() {
+  // Initializing Robot Configuration. DO NOT REMOVE!
+  vexcodeInit();
+
   for (int i = 0; i < 8; i++) {
     Brain.Screen.setPenColor(blue);
     Brain.Screen.drawRectangle(5+(60*i), 50, 50, 175, blue);
@@ -148,6 +163,9 @@ Then to set text, we can use `Brain.Screen.printAt()`.  After writing text we ne
 int AutonNumber = 1;
 
 void pre_auton() {
+  // Initializing Robot Configuration. DO NOT REMOVE!
+  vexcodeInit();
+  
   for (int i = 0; i < 8; i++) {
     Brain.Screen.setPenColor(blue);
     Brain.Screen.drawRectangle(5+(60*i), 50, 50, 175, blue);

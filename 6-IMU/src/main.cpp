@@ -74,6 +74,9 @@ void pre_auton(void) {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
 
+  wait(2, sec); // Give the IMU time to calibrate
+  Controller1.rumble(".");
+
   // All activities that occur before the competition starts
   // Example: clearing encoders, setting servo positions, ...
 }

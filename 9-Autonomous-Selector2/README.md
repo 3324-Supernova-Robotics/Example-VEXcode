@@ -8,6 +8,8 @@ The `pre_auton` function from the previous example.
 int AutonNumber = 1; // Current Autonomous
 
 void pre_auton() {
+  // Initializing Robot Configuration. DO NOT REMOVE!
+  vexcodeInit();
 
   // . . .
   // Put your pre auton code here!
@@ -57,6 +59,8 @@ Even though this code is longer, it is easier to maintain.
 int AutonNumber = 1; // Current Autonomous
 
 void pre_auton() {
+  // Initializing Robot Configuration. DO NOT REMOVE!
+  vexcodeInit();
 
   // . . .
   // Put your pre auton code here!
@@ -166,6 +170,8 @@ The color of the text starts as `unselected`, but changes to `selected` when you
 int AutonNumber = 1; // Current Autonomous
 
 void pre_auton() {
+  // Initializing Robot Configuration. DO NOT REMOVE!
+  vexcodeInit();
 
   // . . .
   // Put your pre auton code here!

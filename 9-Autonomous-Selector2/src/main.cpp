@@ -32,6 +32,8 @@ competition Competition;
 int AutonNumber = 1; // Current Autonomous
 
 void pre_auton() {
+  // Initializing Robot Configuration. DO NOT REMOVE!
+  vexcodeInit();
 
   // . . .
   // Put your pre auton code here!

@@ -40,6 +40,21 @@ void feedback(double target) {
 }
 ```
 
+## IMU Setup
+The inertial sensor needs 2 seconds to calibrate at the start of the program.  During this 2 seconds, the robot CANNOT move, or the IMU will not read correctly.  To make it easier for us to know when the 2 seconds is over, we can have the controller vibrate after the 2 seconds by adding this code to `pre_auton`.
+```cpp
+void pre_auton(void) {
+  // Initializing Robot Configuration. DO NOT REMOVE!
+  vexcodeInit();
+
+  wait(2, sec); // Give the IMU time to calibrate
+  Controller1.rumble(".");
+
+  // All activities that occur before the competition starts
+  // Example: clearing encoders, setting servo positions, ...
+}
+```
+
 ## Modifying feedback()
 To make the `feedback` function work for turning, we need to replace `current` (in this case, `lift_motor.position(deg)`) to read the current imu position.  We can do this with `imu.rotation(deg);`.  
 
