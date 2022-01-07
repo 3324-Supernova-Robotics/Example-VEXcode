@@ -20,6 +20,7 @@ In VEXcode, go to `File` -> `Open` and navigate to your `Downloads` to find the 
 ### 6 - [IMU](6-IMU)
 ### 7 - [Pneumatics](7-Pneumatics)
 ### 8 - [Screen Autonomous Selector](8-Autonomous-Selector)
+### 9 - [Color Changing Screen Autonomous Selector](9-Autonomous-Selector2)
 
 ## Other Examples
 Check [Amogo](https://github.com/Unionjackjz1/HW-AMOGO-VEXCODE) and [Dogo](https://github.com/Unionjackjz1/HW-DOGO-VEXCODE) for another VEXcode V5 Pro example. 
