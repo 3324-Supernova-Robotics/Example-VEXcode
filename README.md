@@ -16,9 +16,7 @@ In VEXcode, go to `File` -> `Open` and navigate to your `Downloads` to find the 
 ### 2 - Motor and Controller Setup
 ### 3 - Lift Control 
 ### 4 - Joystick Control
-### 5 - 
-### 6 -
-### 7 -
-### 8 -
-### 9 -
-### 10 -
+### 5 - Feedback Controller (PID) 
+### 6 - IMU
+### 7 - Pneumatics
+### x - Screen Autonomous Selector
