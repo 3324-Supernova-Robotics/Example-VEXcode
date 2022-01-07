@@ -6,3 +6,4 @@ All of your user control code goes in `void usercontrol(void) {}`, and all of yo
 
 Coding in a competition template is required for tournaments. 
 
+In practice to switch between `user` and `auton`, you can use a competition switch. 

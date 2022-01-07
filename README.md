@@ -19,4 +19,4 @@ In VEXcode, go to `File` -> `Open` and navigate to your `Downloads` to find the 
 ### 5 - Feedback Controller (PID) 
 ### 6 - IMU
 ### 7 - Pneumatics
-### x - Screen Autonomous Selector
+### 8 - Screen Autonomous Selector
