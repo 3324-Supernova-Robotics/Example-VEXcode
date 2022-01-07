@@ -99,12 +99,14 @@ void usercontrol(void) {
     //
 
     // If the absolute value of left joy is less then 5...
-    if (abs(left_joy) < 5)
+    if (abs(left_joy) < 5) {
       left_joy = 0; // Set left_joy to 0
+    }
 
     // If the absolute value of right joy is less then 5...
-    if (abs(right_joy) < 5)
+    if (abs(right_joy) < 5) {
       right_joy = 0; // Set right_joy to 0
+    }
     
     // Set the drive to left joy and right joy
     set_tank(left_joy, right_joy);
