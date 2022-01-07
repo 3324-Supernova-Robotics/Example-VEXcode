@@ -79,11 +79,13 @@ void usercontrol(void) {
     // update your motors, etc.
     // ........................................................................
 
+    // If L1 is pressed..
     if (Controller1.ButtonL1.pressing()) {
-      piston.set(true);
+      piston.set(true); // Set piston to true
     }
+    // If L2 is pressed..
     else if (Controller1.ButtonL2.pressing()) {
-      piston.set(false);
+      piston.set(false); // Set piston to false
     }
 
     wait(20, msec); // Sleep the task for a short amount of time to

@@ -92,19 +92,19 @@ void usercontrol(void) {
     // update your motors, etc.
     // ........................................................................
 
-    // If L1 is pressed, move the motor forwards full power
+    // If L1 is pressed...
     if (Controller1.ButtonL1.pressing()) {
-      set_lift(100);
+      set_lift(100); // move the motor forwards full power
     }
 
-    // If L2 is pressed, move the motor backwards at full power
+    // If L2 is pressed
     else if (Controller1.ButtonL2.pressing()) {
-      set_lift(-100);
+      set_lift(-100); // move the motor backwards at full power
     }
 
-    // If no button is pressed, don't move the motor
+    // If no button is pressed
     else {
-      set_lift(0);
+      set_lift(0); // don't move the motor
     }
 
     wait(20, msec); // Sleep the task for a short amount of time to

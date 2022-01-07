@@ -92,26 +92,38 @@ void pre_auton() {
 int AutonNumber = 1;
 
 void pre_auton() {
+
+  // . . .
+  // Put your pre auton code here!
+  // . . .
+
+  // Print 8 rectangles 
   for (int i = 0; i < 8; i++) {
     Brain.Screen.setPenColor(blue);
     Brain.Screen.drawRectangle(5+(60*i), 50, 50, 175, blue);
   }
 
+  // Set font to monoM
   Brain.Screen.setFont(monoM); 
 
   while (true) {
-    // Selected position
-    int x = Brain.Screen.xPosition();
-    int y = Brain.Screen.yPosition();
 
+    // Autonomous Selector
+    // Selected position
+    int x = Brain.Screen.xPosition(); // X position of finger
+    int y = Brain.Screen.yPosition(); // Y position of finger
+
+    // Check if finger is within vertical selection of the boxes
     if (50 < y && y < 50+175) {
       for (int i = 0; i < 8; i++) {
+        // Check which x value the finger is within
         if (5+(60*i) < x && x < (60*(i+1))-5) {
           AutonNumber = i+1;
         }
       }
     }
 
+    // Print AutonNumber to brain
     Brain.Screen.printAt(5, 30, "Current Auto: %d", AutonNumber); // %d is a formatting character that gets replaced with AutonNumber
     wait(20, msec);
     Brain.Screen.clearLine(1);
@@ -130,28 +142,28 @@ void pre_auton() {
 
 void autonomous(void) {
   if (AutonNumber == 1) {
-    // code
+    // Call Auton 
   }
   else if (AutonNumber == 2) {
-    // code
+    // Call Auton 
   }
   else if (AutonNumber == 3) {
-    // code
+    // Call Auton 
   }
   else if (AutonNumber == 4) {
-    // code
+    // Call Auton 
   }
   else if (AutonNumber == 5) {
-    // code
+    // Call Auton 
   }
   else if (AutonNumber == 6) {
-    // code
+    // Call Auton 
   }
   else if (AutonNumber == 7) {
-    // code
+    // Call Auton 
   }
   else if (AutonNumber == 8) {
-    // code
+    // Call Auton 
   }
 }
 

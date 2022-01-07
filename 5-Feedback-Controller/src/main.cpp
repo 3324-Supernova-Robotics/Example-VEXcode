@@ -26,26 +26,29 @@ void set_lift(int input) {
   lift_motor.spin(fwd, input*SCALE, voltageUnits::mV);
 }
 
+// Feedback controller
 void feedback(double target) {
-  double kP = 0.5;
-  int x = 0;
+  double kP = 0.5; // kP (scaling number)
+  int x = 0; // Timer for exit condition
   while (true) {
-    double error = target - lift_motor.position(deg);
-    set_lift(error * kP);
+    double error = target - lift_motor.position(deg); // error = (target - current)
+    set_lift(error * kP); // Set motors to (error * kP)
 
+    // If the velocity of the motor is 0...
     if (lift_motor.velocity(pct) == 0) {
-      x+=10;
-      if (x >= 50) {
-        break;
+      x+=10; // Increase x by 10
+      if (x >= 50) { // If x is 50 (meaning the motors were at 0 for 50ms)...
+        break; // Break the while loop
       }
     } 
+    // If the velocity of the motor is not 0...
     else {
-      x = 0;
+      x = 0; // Reset the timer
     }
 
     wait(10, msec);
   }
-  set_lift(0);
+  set_lift(0); // Set the motors to 0 before exiting this function
 }
 
 /*---------------------------------------------------------------------------*/
@@ -80,6 +83,8 @@ void autonomous(void) {
   // ..........................................................................
   // Insert autonomous user code here.
   // ..........................................................................
+  feedback(360); // Spin the motor 1 full rotation
+  feedback(0);   // Spin the motor 1 full rotation backwards
 }
 
 /*---------------------------------------------------------------------------*/

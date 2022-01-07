@@ -35,26 +35,29 @@ void set_tank(int left, int right) {
   right_back.spin(fwd, right*SCALE, voltageUnits::mV);
 }
 
+// Turn P loop
 void turn(double target) {
-  double kP = 0.5;
-  int x = 0;
+  double kP = 0.5; // kP (scaling number)
+  int x = 0; // Timer for exit conditio
   while (true) {
-    double error = target - imu.rotation(deg);
-    set_tank(error * kP, -error * kP);
+    double error = target - imu.rotation(deg); // error = (target - current)
+    set_tank(error * kP, -error * kP); // Set motors to (error * kP)
 
+    // If the velocity of the left and right motors are 0...
     if (left_back.velocity(pct) == 0 && right_back.velocity(pct) == 0) {
-      x+=10;
-      if (x >= 50) {
-        break;
+      x+=10; // Increase x by 10
+      if (x >= 50) { // If x is 50 (meaning the motors were at 0 velocity for 50ms)...
+        break; // Break the while loop
       }
     } 
+    // If the velocity of the left and right motors are not 0...
     else {
-      x = 0;
+      x = 0; // Set the timer to 0
     }
 
     wait(10, msec);
   }
-  set_tank(0, 0);
+  set_tank(0, 0); // Make sure motors are off before leaving this function
 }
 
 /*---------------------------------------------------------------------------*/
@@ -89,6 +92,8 @@ void autonomous(void) {
   // ..........................................................................
   // Insert autonomous user code here.
   // ..........................................................................
+  turn (180);
+  turn(90);
 }
 
 /*---------------------------------------------------------------------------*/
