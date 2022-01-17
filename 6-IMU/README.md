@@ -1,6 +1,8 @@
 # IMU
 
-We will change the feedback controller to work for turning using the IMU.  
+[*Note: For a more in-depth PID paper, check this guide by George Gillard*](http://georgegillard.com/documents/2-introduction-to-pid-controllers)
+
+We will change the feedback controller to work for turning using the IMU. 
 
 ## Prerequisites
 Create 4 motors (`left_back`, `left_front`, `right_back`, `right_front`), an inertial named `imu`, and the controller named `Controller1`.  You'll have to reverse one of the sides of the chassis!  
@@ -92,3 +94,8 @@ void autonomous(void) {
   turn(0);   // Turns to face 0
 }
 ```
+
+## Tuning a P Controller
+The goal of a feedback controller is to slow down as you get to the target to not overshoot, and you accomplish this by modifying your constants (kP, kI and kD).  
+
+If your kP is too high, your robot will oscillate around the target.  If your kP is too low, you'll undershoot and not make your target.  You need to trial and error your kP until you get to a value that gets you to your position consistently. 

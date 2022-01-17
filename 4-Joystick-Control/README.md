@@ -36,15 +36,25 @@ void usercontrol(void) {
     // update your motors, etc.
     // ........................................................................
 
+    // Variables for the left and right joystick
     int left_joy = Controller1.Axis3.value();
     int right_joy = Controller1.Axis2.value();
 
+    //
     // Joysticks don't always come back to 0 perfectly, so a programmed threshold makes driving easier.
-    if (abs(left_joy) < 5)
-      left_joy = 0;
-    if (abs(right_joy) < 5)
-      right_joy = 0;
+    //
+
+    // If the absolute value of left joy is less then 5...
+    if (abs(left_joy) < 5) {
+      left_joy = 0; // Set left_joy to 0
+    }
+
+    // If the absolute value of right joy is less then 5...
+    if (abs(right_joy) < 5) {
+      right_joy = 0; // Set right_joy to 0
+    }
     
+    // Set the drive to left joy and right joy
     set_tank(left_joy, right_joy);
 
     wait(20, msec); // Sleep the task for a short amount of time to

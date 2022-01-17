@@ -1,5 +1,7 @@
 # Feedback Controller 
 
+[*Note: for a more in-depth PID paper, check this guide by George Gillard*](http://georgegillard.com/documents/2-introduction-to-pid-controllers)
+
 ## Prerequisites 
 One motor setup called `lift_motor`, and the `set_lift()` function below. 
 ```cpp
@@ -14,7 +16,7 @@ Feedback controllers use sensors to react and adjust.  We want to tell our robot
 
 For this example we will be using a P loop, the first part of PID.  
 
-P loops work by running `taret - current`.  The chart below shows how error becomes smaller as the robot gets closer to the target. 
+P loops work by running `target - current`.  The chart below shows how error becomes smaller as the robot gets closer to the target. 
 
 | target  | current | error |
 | :---:   |  :----: | :---: |
@@ -24,7 +26,7 @@ P loops work by running `taret - current`.  The chart below shows how error beco
 | 100     | 75      | 25    |
 | 100     | 100     | 0     |
 
-Sometimes this won't be aggressive enough, or it will be too aggressive.  We can tune it by adding a scaler value called `kP`.  The motor would be set to `error * kP`.  
+Sometimes this won't be aggressive enough, or it will be too aggressive.  We can tune it by adding a scalar value called `kP`.  The motor would be set to `error * kP`.  
 
 ## Implementation
 This code would move the motor one full rotation.  
@@ -79,3 +81,8 @@ void autonomous(void) {
   feedback(0); // Spin the motor back 1 full rotation
 }
 ```
+
+## Tuning a P Controller
+The goal of a feedback controller is to slow down as you get to the target to not overshoot, and you accomplish this by modifying your constants (kP, kI and kD).  
+
+If your kP is too high, your robot will oscillate around the target.  If your kP is too low, you'll undershoot and not make your target.  You need to trial and error your kP until you get to a value that gets you to your position consistently. 

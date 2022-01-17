@@ -38,7 +38,7 @@ void set_tank(int left, int right) {
 // Turn P loop
 void turn(double target) {
   double kP = 0.5; // kP (scaling number)
-  int x = 0; // Timer for exit conditio
+  int x = 0; // Timer for exit condition
   while (true) {
     double error = target - imu.rotation(deg); // error = (target - current)
     set_tank(error * kP, -error * kP); // Set motors to (error * kP)
@@ -95,7 +95,7 @@ void autonomous(void) {
   // ..........................................................................
   // Insert autonomous user code here.
   // ..........................................................................
-  turn (180);
+  turn(180);
   turn(90);
 }
 
